@@ -89,121 +89,123 @@
         </div>
     </section>
 
-    <!-- Supabase Config -->
-    <script>
-        // Initialize the Supabase client
-        const SUPABASE_URL = 'https://yucrjvavbdgrkshmryoa.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1Y3JqdmF2YmRncmtzaG1yeW9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4MzU5MTUsImV4cCI6MjA1OTQxMTkxNX0.E1-kfJ_C-2eahcx6qdhO0d_1y8lCCbI2yq9Hu3EPk3o';
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    </script>
-
     <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            const authButtons = document.querySelector('.auth-buttons');
-            
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            authButtons.style.display = authButtons.style.display === 'flex' ? 'none' : 'flex';
-        });
+        // Tunggu sampai semua konten HTML selesai dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cek apakah Supabase sudah terdefinisi
+            if (typeof supabase === 'undefined') {
+                console.error('Error: Supabase belum dimuat dengan benar');
+                alert('Aplikasi sedang mengalami masalah teknis. Silakan refresh halaman.');
+                return;
+            }
 
-        // Login form handling with Supabase
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            // Inisialisasi Supabase
+            const SUPABASE_URL = 'https://yucrjvavbdgrkshmryoa.supabase.co';
+            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1Y3JqdmF2YmRncmtzaG1yeW9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4MzU5MTUsImV4cCI6MjA1OTQxMTkxNX0.E1-kfJ_C-2eahcx6qdhO0d_1y8lCCbI2yq9Hu3EPk3o';
             
             try {
-                // Sign in with Supabase
-                const { data, error } = await supabase.auth.signInWithPassword({
-                    email: email,
-                    password: password
-                });
+                const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
                 
-                if (error) {
-                    throw error;
-                }
-                
-                // Login successful
-                alert('Login berhasil!');
-                // Store user session
-                localStorage.setItem('user', JSON.stringify(data.user));
-                // Redirect to dashboard or home page
-                window.location.href = 'dashboard.html';
-                
-            } catch (error) {
-                alert('Login gagal: ' + error.message);
-                console.error('Error logging in:', error);
-            }
-        });
-
-        // Password reset functionality
-        document.getElementById('resetPassword').addEventListener('click', async function(e) {
-            e.preventDefault();
-            
-            const email = prompt('Masukkan alamat email Anda untuk menerima tautan reset kata sandi:');
-            
-            if (email) {
-                try {
-                    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-                        redirectTo: window.location.origin + '/reset-password.html',
-                    });
+                // Mobile menu toggle
+                document.querySelector('.mobile-menu').addEventListener('click', function() {
+                    const navLinks = document.querySelector('.nav-links');
+                    const authButtons = document.querySelector('.auth-buttons');
                     
-                    if (error) {
-                        throw error;
-                    }
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                    authButtons.style.display = authButtons.style.display === 'flex' ? 'none' : 'flex';
+                });
+
+                // Login form handling
+                document.getElementById('loginForm').addEventListener('submit', async function(e) {
+                    e.preventDefault();
                     
-                    alert('Email instruksi reset kata sandi telah dikirim. Silakan periksa kotak masuk Anda.');
-                } catch (error) {
-                    alert('Gagal mengirim email reset: ' + error.message);
-                    console.error('Password reset error:', error);
-                }
-            }
-        });
-
-        // Google login
-        document.getElementById('googleLogin').addEventListener('click', async function(e) {
-            e.preventDefault();
-            
-            try {
-                const { data, error } = await supabase.auth.signInWithOAuth({
-                    provider: 'google',
-                    options: {
-                        redirectTo: window.location.origin + '/dashboard.html'
+                    const email = document.getElementById('email').value;
+                    const password = document.getElementById('password').value;
+                    
+                    try {
+                        const { data, error } = await supabaseClient.auth.signInWithPassword({
+                            email: email,
+                            password: password
+                        });
+                        
+                        if (error) throw error;
+                        
+                        alert('Login berhasil!');
+                        localStorage.setItem('user', JSON.stringify(data.user));
+                        window.location.href = 'dashboard.html';
+                        
+                    } catch (error) {
+                        console.error('Error login:', error);
+                        alert('Login gagal: ' + error.message);
                     }
                 });
-                
-                if (error) {
-                    throw error;
-                }
-                
-            } catch (error) {
-                alert('Login dengan Google gagal: ' + error.message);
-                console.error('Google login error:', error);
-            }
-        });
 
-        // Facebook login
-        document.getElementById('facebookLogin').addEventListener('click', async function(e) {
-            e.preventDefault();
-            
-            try {
-                const { data, error } = await supabase.auth.signInWithOAuth({
-                    provider: 'facebook',
-                    options: {
-                        redirectTo: window.location.origin + '/dashboard.html'
+                // Reset password
+                document.getElementById('resetPassword').addEventListener('click', async function(e) {
+                    e.preventDefault();
+                    
+                    const email = prompt('Masukkan alamat email Anda untuk menerima tautan reset kata sandi:');
+                    
+                    if (email) {
+                        try {
+                            const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+                                redirectTo: window.location.origin + '/reset-password.html',
+                            });
+                            
+                            if (error) throw error;
+                            
+                            alert('Email instruksi reset kata sandi telah dikirim. Silakan periksa kotak masuk Anda.');
+                        } catch (error) {
+                            console.error('Error reset password:', error);
+                            alert('Gagal mengirim email reset: ' + error.message);
+                        }
                     }
                 });
-                
-                if (error) {
-                    throw error;
-                }
-                
+
+                // Google login
+                document.getElementById('googleLogin').addEventListener('click', async function(e) {
+                    e.preventDefault();
+                    
+                    try {
+                        const { error } = await supabaseClient.auth.signInWithOAuth({
+                            provider: 'google',
+                            options: {
+                                redirectTo: window.location.origin + '/dashboard.html'
+                            }
+                        });
+                        
+                        if (error) throw error;
+                        
+                    } catch (error) {
+                        console.error('Error Google login:', error);
+                        alert('Login dengan Google gagal: ' + error.message);
+                    }
+                });
+
+                // Facebook login
+                document.getElementById('facebookLogin').addEventListener('click', async function(e) {
+                    e.preventDefault();
+                    
+                    try {
+                        const { error } = await supabaseClient.auth.signInWithOAuth({
+                            provider: 'facebook',
+                            options: {
+                                redirectTo: window.location.origin + '/dashboard.html'
+                            }
+                        });
+                        
+                        if (error) throw error;
+                        
+                    } catch (error) {
+                        console.error('Error Facebook login:', error);
+                        alert('Login dengan Facebook gagal: ' + error.message);
+                    }
+                });
+
             } catch (error) {
-                alert('Login dengan Facebook gagal: ' + error.message);
-                console.error('Facebook login error:', error);
+                console.error('Error inisialisasi Supabase:', error);
+                alert('Terjadi kesalahan dalam menginisialisasi aplikasi. Silakan coba lagi.');
             }
         });
     </script>
