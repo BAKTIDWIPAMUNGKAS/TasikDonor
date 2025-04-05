@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Event Donor Darah - TasikDonor</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-heartbeat" style="color: #e63946; font-size: 28px; margin-right: 10px;"></i>
+                    <h1>TasikDonor</h1>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="/index.html">Beranda</a></li>
+                    <li><a href="/donor.html">Donor Darah</a></li>
+                    <li><a href="/request.html">Permintaan</a></li>
+                    <li><a href="/event.html">Jadwal Event</a></li>
+                    <li><a href="/about.html">Tentang Kami</a></li>
+                </ul>
+                
+                <div class="auth-buttons">
+                    <a href="/login.html" class="btn btn-outline">Masuk</a>
+                    <a href="/register.html" class="btn btn-primary">Daftar</a>
+                </div>
+                
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="event-page-header" style="background-image: url(/image/Hands_Heart_Black_background_539147_1280x853.jpg);">
+        <div class="container">
+            <h1>Pendaftaran Event Donor Darah</h1>
+            <p>Daftarkan diri Anda untuk berpartisipasi dalam event donor darah berikut</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container" style="padding: 60px 0;">
+        <div class="event-registration-container">
+            <div class="event-details-card">
+                <div class="event-image" style="background-image: url('/image/brosur\ 6.png');">
+                    <div class="event-date">
+                        <div class="event-day">8</div>
+                        <div class="event-month">NOV</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <span class="event-status status-upcoming">Akan Datang</span>
+                    <h2 class="event-title">Donor Darah dan Cek Kesehatan Gratis</h2>
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock meta-icon"></i>
+                            <span>09:00 - 13:00 WIB</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt meta-icon"></i>
+                            <span>Alun-alun Dadaha</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-users meta-icon"></i>
+                            <span>Kuota tersedia: 120/150</span>
+                        </div>
+                    </div>
+                    <div class="event-description">
+                        <p>Kegiatan donor darah yang diprakarsai oleh PMI Kota Tasikmalaya. Dapatkan souvenir menarik untuk setiap pendonor.</p>
+                        <h4>Syarat & Ketentuan:</h4>
+                        <ul>
+                            <li>Usia 17-65 tahun</li>
+                            <li>Berat badan minimal 45 kg</li>
+                            <li>Tidak sedang sakit atau mengonsumsi obat tertentu</li>
+                            <li>Sudah makan sebelum donor</li>
+                            <li>Membawa KTP atau identitas lainnya</li>
+                        </ul>
+                    </div>
+                    <div class="event-organizer">
+                        <div class="organizer-logo">
+                            <i class="fas fa-hospital-alt" style="left: 1px; "></i>
+                        </div>
+                        <div class="organizer-info">
+                            <div class="organizer-name">PMI Kota Tasikmalaya</div>
+                            <div class="organizer-contact">
+                                <i class="fas fa-phone"></i> (0265) 322333
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="registration-form-container">
+                <div class="form-header">
+                    <h3>Formulir Pendaftaran</h3>
+                    <p>Isi data diri Anda dengan benar untuk mendaftar event ini</p>
+                </div>
+                
+                <form class="registration-form">
+                    <div class="form-group">
+                        <label for="fullname">Nama Lengkap</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="id-number">Nomor KTP</label>
+                        <input type="text" id="id-number" name="id-number" required>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="blood-type">Golongan Darah</label>
+                            <select id="blood-type" name="blood-type" required>
+                                <option value="">Pilih Golongan Darah</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="AB">AB</option>
+                                <option value="O">O</option>
+                                <option value="unknown">Tidak Tahu</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donor-count">Jumlah Donor Sebelumnya</label>
+                            <input type="number" id="donor-count" name="donor-count" min="0" value="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="last-donor">Tanggal Donor Terakhir</label>
+                        <input type="date" id="last-donor" name="last-donor">
+                        <small class="form-hint">Biarkan kosong jika belum pernah donor</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="health-info">Informasi Kesehatan</label>
+                        <textarea id="health-info" name="health-info" rows="3" placeholder="Riwayat penyakit, alergi, atau informasi kesehatan lainnya"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Saya menyatakan bahwa informasi yang diberikan benar dan saya memenuhi syarat untuk donor darah</label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
+                        <a href="/event.html" class="btn btn-outline">Kembali</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat" style="color: #e63946; font-size: 28px; margin-right: 10px;"></i>
+                        <h2>TasikDonor</h2>
+                    </div>
+                    <p>TasikDonor adalah platform yang menghubungkan pendonor darah dengan mereka yang membutuhkan. Misi kami adalah memastikan ketersediaan darah yang aman dan cukup untuk semua yang membutuhkan.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="/index.html">Beranda</a></li>
+                        <li><a href="/donor.html">Donor Darah</a></li>
+                        <li><a href="/request.html">Permintaan Darah</a></li>
+                        <li><a href="/event.html">Jadwal Event</a></li>
+                        <li><a href="#">Syarat Donor</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">Tentang Kami</a></li>
+                        <li><a href="/about.html">Tim Kami</a></li>
+                        <li><a href="/about.html">Testimoni</a></li>
+                        <li><a href="/about.html">Mitra Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Hubungi Kami</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jl. Laskar Wanita Indonesia (Laswi) No. 76 Kota Tasikmalaya</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>(0265) 322253</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@tasikdonor.id</span>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <p>Berlangganan untuk mendapatkan informasi terbaru</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Email Anda" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 TasikDonor. Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const authButtons = document.querySelector('.auth-buttons');
+            
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            authButtons.style.display = authButtons.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Form submission
+        document.querySelector('.registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simpan data pendaftaran (dalam implementasi nyata, ini akan mengirim ke server)
+            alert('Pendaftaran berhasil! Anda akan menerima email konfirmasi segera.');
+            
+            // Redirect ke halaman event setelah 2 detik
+            setTimeout(() => {
+                window.location.href = 'event.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

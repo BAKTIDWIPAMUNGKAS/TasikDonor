@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permintaan Darah - TasikDonor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-heartbeat" style="color: #e63946; font-size: 28px; margin-right: 10px;"></i>
+                    <h1>TasikDonor</h1>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="donor.html">Donor Darah</a></li>
+                    <li><a href="request.html">Permintaan</a></li>
+                    <li><a href="event.html">Jadwal Event</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                </ul>
+                
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Masuk</a>
+                    <a href="register.html" class="btn btn-primary">Daftar</a>
+                </div>
+                
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="background-image: url(/image/Hands_Heart_Black_background_539147_1280x853.jpg); padding: 60px 0;">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Permintaan Darah</h2>
+                <p>Lihat daftar permintaan darah terkini atau buat permintaan baru untuk membantu mereka yang membutuhkan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="blood-requests" style="padding-top: 40px;">
+        <div class="container">
+            <div class="banner">
+                <div class="banner-title">Info Penting!</div>
+                <div class="banner-text">Darah dengan golongan O- dan AB- sedang sangat dibutuhkan saat ini. Jika Anda memiliki golongan darah tersebut, mohon pertimbangkan untuk mendonorkan darah Anda.</div>
+            </div>
+            
+            <div class="filter-container">
+                <form class="filter-form">
+                    <div class="form-group">
+                        <label for="blood-type">Golongan Darah</label>
+                        <select id="blood-type">
+                            <option value="">Semua Golongan</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Lokasi</label>
+                        <select id="location">
+                            <option value="">Semua Lokasi</option>
+                            <option value="Cihideung">Cihideung</option>
+                            <option value="Tawang">Tawang</option>
+                            <option value="Cipedes">Cipedes</option>
+                            <option value="Indihiang">Indihiang</option>
+                            <option value="Kawalu">Kawalu</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="urgency">Tingkat Urgensi</label>
+                        <select id="urgency">
+                            <option value="">Semua</option>
+                            <option value="urgent">Sangat Mendesak</option>
+                            <option value="medium">Mendesak</option>
+                            <option value="low">Normal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hospital">Rumah Sakit</label>
+                        <select id="hospital">
+                            <option value="">Semua Rumah Sakit</option>
+                            <option value="RS TMC">RS TMC Tasikmalaya</option>
+                            <option value="RSIA">R.S.I.A Dr. Hj. Karmini E.H</option>
+                            <option value="JHC">JHC Tasikmalaya Hospital</option>
+                            <option value="RSU">RSU Tasikmalaya</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-buttons">
+                        <button type="reset" class="btn btn-outline btn-small">Reset</button>
+                        <button type="submit" class="btn btn-primary btn-small">Terapkan Filter</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="create-request">
+                <a href="donor.html" class="btn btn-primary">Buat Permintaan Darah Baru</a>
+            </div>
+            
+            <div class="request-cards" style="margin-top: 30px;">
+                <div class="request-card">
+                    <div class="card-header">
+                        <div class="blood-type">A+</div>
+                        <div class="urgency">Mendesak</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hospital-name">RS TMC Tasikmalaya</div>
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div class="detail-text">Agus Setiawan</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <div class="detail-text">3 Kantong</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div class="detail-text">Dibutuhkan sebelum: 5 April 2025</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="detail-text">Jl. HZ. Mustofa No.310, Tuguraja, Kec. Cihideung, Kab. Tasikmalaya</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="detail-text">(0265) 322333</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blood-counter">
+                            <div class="counter-label">Sudah terkumpul</div>
+                            <div class="counter-value">1 dari 3 kantong</div>
+                        </div>
+                        
+                        <div class="request-actions">
+                            <a href="/help/RS TMC Tasikmalaya.html" class="btn btn-primary">Bantu Sekarang</a>
+                            <a href="#" class="btn btn-outline">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="request-card">
+                    <div class="card-header" style="background-color: #d32f2f;">
+                        <div class="blood-type">O-</div>
+                        <div class="urgency">Sangat Mendesak</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hospital-name">R.S.I.A Dr. Hj. Karmini E.H</div>
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div class="detail-text">Maya Indah</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <div class="detail-text">2 Kantong</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div class="detail-text">Dibutuhkan sebelum: 4 April 2025</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="detail-text">Jl. Rumah Sakit No.56-58, Kahuripan, Kec. Tawang, Kab. Tasikmalaya</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="detail-text">(0265) 330644</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blood-counter">
+                            <div class="counter-label">Sudah terkumpul</div>
+                            <div class="counter-value">0 dari 2 kantong</div>
+                        </div>
+                        
+                        <div class="request-actions">
+                            <a href="/help/R.S.I.A Dr. Hj. Karmini E.H.html" class="btn btn-primary">Bantu Sekarang</a>
+                            <a href="#" class="btn btn-outline">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="request-card">
+                    <div class="card-header">
+                        <div class="blood-type">B+</div>
+                        <div class="urgency">Mendesak</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hospital-name">JHC Tasikmalaya Hospital</div>
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div class="detail-text">Budi Santoso</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <div class="detail-text">4 Kantong</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div class="detail-text">Dibutuhkan sebelum: 7 April 2025</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="detail-text">Jl. M. Hatta No.155, Sukamanah, Kec. Cipedes, Kab. Tasikmalaya</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="detail-text">(0265) 3172112</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blood-counter">
+                            <div class="counter-label">Sudah terkumpul</div>
+                            <div class="counter-value">2 dari 4 kantong</div>
+                        </div>
+                        
+                        <div class="request-actions">
+                            <a href="/help/JHC Tasikmalaya Hospital.html" class="btn btn-primary">Bantu Sekarang</a>
+                            <a href="#" class="btn btn-outline">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="request-card">
+                    <div class="card-header" style="background-color: #d32f2f;">
+                        <div class="blood-type">AB-</div>
+                        <div class="urgency">Sangat Mendesak</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hospital-name">RSU Tasikmalaya</div>
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div class="detail-text">Siti Aminah</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <div class="detail-text">2 Kantong</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div class="detail-text">Dibutuhkan sebelum: 4 April 2025</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="detail-text">Jl. Dr. Soekardjo No.38, Tawangsari, Kec. Tawang, Kab. Tasikmalaya</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="detail-text">(0265) 331440</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blood-counter">
+                            <div class="counter-label">Sudah terkumpul</div>
+                            <div class="counter-value">1 dari 2 kantong</div>
+                        </div>
+                        
+                        <div class="request-actions">
+                            <a href="/help/RSU Tasikmalaya.html" class="btn btn-primary">Bantu Sekarang</a>
+                            <a href="#" class="btn btn-outline">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="request-card">
+                    <div class="card-header">
+                        <div class="blood-type">A-</div>
+                        <div class="urgency">Mendesak</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hospital-name">RS Hermina Tasikmalaya</div>
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div class="detail-text">Rudi Hartono</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <div class="detail-text">3 Kantong</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div class="detail-text">Dibutuhkan sebelum: 8 April 2025</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="detail-text">Jl. Ir. H. Juanda No.7A, Cipedes, Kec. Cipedes, Kab. Tasikmalaya</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="detail-text">(0265) 3172525</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blood-counter">
+                            <div class="counter-label">Sudah terkumpul</div>
+                            <div class="counter-value">2 dari 3 kantong</div>
+                        </div>
+                        
+                        <div class="request-actions">
+                            <a href="/help/RS Hermina Tasikmalaya.html" class="btn btn-primary">Bantu Sekarang</a>
+                            <a href="#" class="btn btn-outline">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="request-card">
+                    <div class="card-header">
+                        <div class="blood-type">O+</div>
+                        <div class="urgency">Normal</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hospital-name">PMI Tasikmalaya</div>
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div class="detail-text">Bank Darah PMI</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <div class="detail-text">10 Kantong</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div class="detail-text">Dibutuhkan sebelum: 15 April 2025</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="detail-text">Jl. Tentara Pelajar No.35, Tawangsari, Kec. Tawang, Kab. Tasikmalaya</div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="detail-text">(0265) 331493</div>
+                            </div>
+                        </div>
+                        
+                        <div class="blood-counter">
+                            <div class="counter-label">Sudah terkumpul</div>
+                            <div class="counter-value">3 dari 10 kantong</div>
+                        </div>
+                        
+                        <div class="request-actions">
+                            <a href="/help/PMI Tasikmalaya.html" class="btn btn-primary">Bantu Sekarang</a>
+                            <a href="#" class="btn btn-outline">Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#"><i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat" style="color: #e63946; font-size: 28px; margin-right: 10px;"></i>
+                        <h2>TasikDonor</h2>
+                    </div>
+                    <p>TasikDonor adalah platform yang menghubungkan pendonor darah dengan mereka yang membutuhkan. Misi kami adalah memastikan ketersediaan darah yang aman dan cukup untuk semua yang membutuhkan.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="donor.html">Donor Darah</a></li>
+                        <li><a href="request.html">Permintaan Darah</a></li>
+                        <li><a href="event.html">Jadwal Event</a></li>
+                        <li><a href="#">Syarat Donor</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="about.html">Tim Kami</a></li>
+                        <li><a href="about.html">Testimoni</a></li>
+                        <li><a href="about.html">Mitra Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Hubungi Kami</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jl. Laskar Wanita Indonesia (Laswi) No. 76 Kota Tasikmalaya</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>(0265) 322253</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@tasikdonor.id</span>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <p>Berlangganan untuk mendapatkan informasi terbaru</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Email Anda" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 TasikDonor. Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const authButtons = document.querySelector('.auth-buttons');
+            
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            authButtons.style.display = authButtons.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

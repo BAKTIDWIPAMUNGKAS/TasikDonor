@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Event Donor Darah - TasikDonor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-heartbeat" style="color: #e63946; font-size: 28px; margin-right: 10px;"></i>
+                    <h1>TasikDonor</h1>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="donor.html">Donor Darah</a></li>
+                    <li><a href="request.html">Permintaan</a></li>
+                    <li><a href="event.html">Jadwal Event</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                </ul>
+                
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Masuk</a>
+                    <a href="register.html" class="btn btn-primary">Daftar</a>
+                </div>
+                
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="event-page-header" style="background-image: url(/image/Hands_Heart_Black_background_539147_1280x853.jpg);">
+        <div class="container">
+            <h1>Jadwal Event Donor Darah</h1>
+            <p>Temukan jadwal event donor darah yang akan dilaksanakan di kota Tasikmalaya dan sekitarnya.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container" style="padding: 60px 0;">
+        <div class="banner">
+            <div class="banner-title">Informasi Penting</div>
+            <div class="banner-text">Pastikan Anda memenuhi syarat untuk mendonorkan darah. Sebelum mendonor, istirahatlah yang cukup, makan teratur, dan minum banyak air.</div>
+        </div>
+        
+        <div class="view-toggle">
+            <button class="view-btn active">
+                <i class="fas fa-th-large"></i> Grid View
+            </button>
+            <button class="view-btn">
+                <i class="fas fa-calendar-alt"></i> Kalender
+            </button>
+        </div>
+
+        <div class="filter-tabs">
+            <div class="filter-tab active">Semua Event</div>
+            <div class="filter-tab">Mendatang</div>
+            <div class="filter-tab">Sedang Berlangsung</div>
+            <div class="filter-tab">Selesai</div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-container">
+            <form class="filter-form">
+                <div class="form-group">
+                    <label for="location">Lokasi</label>
+                    <select id="location">
+                        <option value="">Semua Lokasi</option>
+                        <option value="cihideung">Cihideung</option>
+                        <option value="tawang">Tawang</option>
+                        <option value="cipedes">Cipedes</option>
+                        <option value="cibereum">Cibereum</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="organizer">Penyelenggara</label>
+                    <select id="organizer">
+                        <option value="">Semua Penyelenggara</option>
+                        <option value="pmi">PMI Tasikmalaya</option>
+                        <option value="hospital">Rumah Sakit</option>
+                        <option value="community">Komunitas</option>
+                        <option value="university">Universitas</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Tanggal</label>
+                    <input type="date" id="date">
+                </div>
+                
+                <div class="filter-buttons">
+                    <button type="reset" class="btn btn-outline btn-small">Reset</button>
+                    <button type="submit" class="btn btn-primary btn-small">Terapkan Filter</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Events Grid View -->
+        <div class="event-grid">
+            <!-- Event 1 -->
+            <div class="event-item">
+                <div class="event-image" style="background-image: url('/api/placeholder/300/200');">
+                    <div class="event-date">
+                        <div class="event-day">15</div>
+                        <div class="event-month">APR</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <span class="event-status status-upcoming">Akan Datang</span>
+                    <h3 class="event-title">Donor Darah Massal - Asia Plaza</h3>
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock meta-icon"></i>
+                            <span>09:00 - 15:00 WIB</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt meta-icon"></i>
+                            <span>Asia Plaza, Tasikmalaya</span>
+                        </div>
+                    </div>
+                    <p class="event-description">Donor darah massal yang diselenggarakan oleh PMI Kota Tasikmalaya. Dapatkan souvenir menarik untuk setiap pendonor.</p>
+                    <a href="/event/event 1.html" class="btn btn-primary" style="width: 100%;">Daftar Sekarang</a>
+                    <div class="event-organizer">
+                        <div class="organizer-logo">
+                            <i class="fas fa-hospital-alt"></i>
+                        </div>
+                        <div class="organizer-name">PMI Kota Tasikmalaya</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="event-item">
+                <div class="event-image" style="background-image: url('/api/placeholder/300/200');">
+                    <div class="event-date">
+                        <div class="event-day">20</div>
+                        <div class="event-month">APR</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <span class="event-status status-upcoming">Akan Datang</span>
+                    <h3 class="event-title">Donor Darah Bersama - Unsil</h3>
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock meta-icon"></i>
+                            <span>10:00 - 14:00 WIB</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt meta-icon"></i>
+                            <span>Universitas Siliwangi, Tasikmalaya</span>
+                        </div>
+                    </div>
+                    <p class="event-description">Kegiatan donor darah yang diselenggarakan oleh Mahasiswa Fakultas Kedokteran Universitas Siliwangi Tasikmalaya.</p>
+                    <a href="/event/event 2.html" class="btn btn-primary" style="width: 100%;">Daftar Sekarang</a>
+                    <div class="event-organizer">
+                        <div class="organizer-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="organizer-name">Universitas Siliwangi</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event 3 -->
+            <div class="event-item">
+                <div class="event-image" style="background-image: url('/api/placeholder/300/200');">
+                    <div class="event-date">
+                        <div class="event-day">25</div>
+                        <div class="event-month">APR</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <span class="event-status status-upcoming">Akan Datang</span>
+                    <h3 class="event-title">Aksi Donor Bersama - Graha Asia</h3>
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock meta-icon"></i>
+                            <span>09:00 - 13:00 WIB</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt meta-icon"></i>
+                            <span>Graha Asia, Tasikmalaya</span>
+                        </div>
+                    </div>
+                    <p class="event-description">Mari berbagi kehidupan melalui setetes darah Anda. Kegiatan ini bekerjasama dengan RS TMC Tasikmalaya.</p>
+                    <a href="/event/event 3.html" class="btn btn-primary" style="width: 100%;">Daftar Sekarang</a>
+                    <div class="event-organizer">
+                        <div class="organizer-logo">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="organizer-name">RS TMC Tasikmalaya</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event 4 -->
+            <div class="event-item">
+                <div class="event-image" style="background-image: url('/api/placeholder/300/200');">
+                    <div class="event-date">
+                        <div class="event-day">28</div>
+                        <div class="event-month">APR</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <span class="event-status status-upcoming">Akan Datang</span>
+                    <h3 class="event-title">Donor Darah Peduli - Transmart Mall</h3>
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock meta-icon"></i>
+                            <span>10:00 - 15:00 WIB</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt meta-icon"></i>
+                            <span>Transmart Mall, Tasikmalaya</span>
+                        </div>
+                    </div>
+                    <p class="event-description">Donor darah sambil berbelanja. Dapatkan voucher belanja untuk setiap pendonor yang berpartisipasi.</p>
+                    <a href="/event/event 4.html" class="btn btn-primary" style="width: 100%;">Daftar Sekarang</a>
+                    <div class="event-organizer">
+                        <div class="organizer-logo">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="organizer-name">Transmart Tasikmalaya</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event 5 -->
+            <div class="event-item">
+                <div class="event-image" style="background-image: url('/api/placeholder/300/200');">
+                    <div class="event-date">
+                        <div class="event-day">5</div>
+                        <div class="event-month">MEI</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <span class="event-status status-upcoming">Akan Datang</span>
+                    <h3 class="event-title">Donor Darah dan Cek Kesehatan Gratis</h3>
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock meta-icon"></i>
+                            <span>08:00 - 14:00 WIB</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt meta-icon"></i>
+                            <span>Alun-alun Tasikmalaya</span>
+                        </div>
+                    </div>
+                    <p class="event-description">Selain donor darah, Anda juga bisa melakukan cek kesehatan gratis termasuk cek gula darah dan kolesterol.</p>
+                    <a href="/event/event 5.html" class="btn btn-primary" style="width: 100%;">Daftar Sekarang</a>
+                    <div class="event-organizer">
+                        <div class="organizer-logo">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="organizer-name">Dinas Kesehatan Tasikmalaya</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event 6 -->
+            <div class="event-item">
+                <div class="event-image" style="background-image: url('/api/placeholder/300/200');">
+                    <div class="event-date">
+                        <div class="event-day">10</div>
+                        <div class="event-month">MEI</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <span class="event-status status-upcoming">Akan Datang</span>
+                    <h3 class="event-title">Donor Darah Fest: Aksi Nyata Selamatkan Nyawa</h3>
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock meta-icon"></i>
+                            <span>09:00 - 13:00 WIB</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt meta-icon"></i>
+                            <span>Alun-alun Dadaha</span>
+                        </div>
+                    </div>
+                    <p class="event-description">Kegiatan donor darah yang diprakarsai oleh PMI Kota Tasikmalaya. Dapatkan souvenir menarik untuk setiap pendonor.</p>
+                    <a href="/event/event 6.html" class="btn btn-primary" style="width: 100%;">Daftar Sekarang</a>
+                    <div class="event-organizer">
+                        <div class="organizer-logo">
+                            <i class="fas fa-hospital-alt"></i>
+                        </div>
+                        <div class="organizer-name">PMI Kota Tasikmalaya</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar View (Hidden by default) -->
+        <div class="calendar-view" style="display: none;">
+            <div class="calendar-header">
+                <div class="calendar-month">April 2025</div>
+                <div class="calendar-nav">
+                    <div class="calendar-nav-btn"><i class="fas fa-chevron-left"></i></div>
+                    <div class="calendar-nav-btn"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
+            
+            <div class="calendar-grid">
+                <!-- Day Names -->
+                <div class="calendar-day-name">Min</div>
+                <div class="calendar-day-name">Sen</div>
+                <div class="calendar-day-name">Sel</div>
+                <div class="calendar-day-name">Rab</div>
+                <div class="calendar-day-name">Kam</div>
+                <div class="calendar-day-name">Jum</div>
+                <div class="calendar-day-name">Sab</div>
+                
+                <!-- Days (Example for April 2025) -->
+                <div class="calendar-day"></div>
+                <div class="calendar-day"></div>
+                <div class="calendar-day">
+                    <div class="calendar-date">1</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">2</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">3</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">4</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">5</div>
+                </div>
+                
+                <div class="calendar-day">
+                    <div class="calendar-date">6</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">7</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">8</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">9</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">10</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">11</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">12</div>
+                </div>
+                
+                <div class="calendar-day">
+                    <div class="calendar-date">13</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">14</div>
+                </div>
+                <div class="calendar-day has-event">
+                    <div class="calendar-date">15</div>
+                    <div class="calendar-event-indicator"></div>
+                    <div class="calendar-event-count">1 Event</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">16</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">17</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">18</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">19</div>
+                </div>
+                
+                <div class="calendar-day">
+                    <div class="calendar-date">20</div>
+                    <div class="calendar-event-indicator"></div>
+                    <div class="calendar-event-count">1 Event</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">21</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">22</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">23</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">24</div>
+                </div>
+                <div class="calendar-day has-event">
+                    <div class="calendar-date">25</div>
+                    <div class="calendar-event-indicator"></div>
+                    <div class="calendar-event-count">1 Event</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">26</div>
+                </div>
+                
+                <div class="calendar-day">
+                    <div class="calendar-date">27</div>
+                </div>
+                <div class="calendar-day has-event">
+                    <div class="calendar-date">28</div>
+                    <div class="calendar-event-indicator"></div>
+                    <div class="calendar-event-count">1 Event</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">29</div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-date">30</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#"><i class="fas fa-chevron-right"></i></a>
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-heartbeat" style="color: #e63946; font-size: 28px; margin-right: 10px;"></i>
+                    <h2>TasikDonor</h2>
+                </div>
+                <p>TasikDonor adalah platform yang menghubungkan pendonor darah dengan mereka yang membutuhkan. Misi kami adalah memastikan ketersediaan darah yang aman dan cukup untuk semua yang membutuhkan.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Tautan Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="donor.html">Donor Darah</a></li>
+                    <li><a href="request.html">Permintaan Darah</a></li>
+                    <li><a href="event.html">Jadwal Event</a></li>
+                    <li><a href="#">Syarat Donor</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Informasi</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="about.html">Tim Kami</a></li>
+                    <li><a href="about.html">Testimoni</a></li>
+                    <li><a href="about.html">Mitra Kami</a></li>
+                    <li><a href="#">Karir</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3 class="footer-title">Hubungi Kami</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jl. Laskar Wanita Indonesia (Laswi) No. 76 Kota Tasikmalaya</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <span>(0265) 322253</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@tasikdonor.id</span>
+                </div>
+                
+                <div class="newsletter">
+                    <p>Berlangganan untuk mendapatkan informasi terbaru</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Email Anda" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 TasikDonor. Hak Cipta Dilindungi.
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+        const navLinks = document.querySelector('.nav-links');
+        const authButtons = document.querySelector('.auth-buttons');
+        
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        authButtons.style.display = authButtons.style.display === 'flex' ? 'none' : 'flex';
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - TasikDonor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Supabase JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-heartbeat" style="color: #e63946; font-size: 28px; margin-right: 10px;"></i>
+                    <h1>TasikDonor</h1>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="donor.html">Donor Darah</a></li>
+                    <li><a href="request.html">Permintaan</a></li>
+                    <li><a href="event.html">Jadwal Event</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                </ul>
+                
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Masuk</a>
+                    <a href="register.html" class="btn btn-primary">Daftar</a>
+                </div>
+                
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Register Section -->
+    <section class="auth-section" style="background-color: #f8f9fa; padding: 80px 0;">
+        <div class="container">
+            <div class="auth-container" style="max-width: 600px; margin: 0 auto;">
+                <div class="auth-card" style="background-color: white; border-radius: 10px; padding: 40px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <h2 style="text-align: center; margin-bottom: 30px; color: var(--dark);">Buat Akun Baru</h2>
+                    
+                    <form id="registerForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">Nama Depan</label>
+                                <input type="text" id="firstName" class="form-control" placeholder="Masukkan nama depan" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Nama Belakang</label>
+                                <input type="text" id="lastName" class="form-control" placeholder="Masukkan nama belakang" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Masukkan email Anda" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Masukkan nomor telepon" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Kata Sandi</label>
+                            <input type="password" id="password" class="form-control" placeholder="Buat kata sandi (min. 8 karakter)" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Konfirmasi Kata Sandi</label>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Ulangi kata sandi Anda" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bloodType">Golongan Darah</label>
+                            <select id="bloodType" class="form-control" required>
+                                <option value="" disabled selected>Pilih golongan darah</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div style="display: flex; align-items: flex-start;">
+                                <input type="checkbox" id="terms" style="margin-right: -150px; margin-top: 3px;" required>
+                                <label for="terms" style="font-size: 14px; color: #666;">
+                                    Saya menyetujui <a href="#" style="color: var(--primary); text-decoration: none;">Syarat & Ketentuan</a> dan <a href="#" style="color: var(--primary); text-decoration: none;">Kebijakan Privasi</a> TasikDonor
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Daftar Sekarang</button>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 20px; color: #666;">
+                            Sudah punya akun? <a href="login.html" style="color: var(--primary); text-decoration: none;">Masuk sekarang</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supabase Config -->
+    <script>
+        // Initialize the Supabase client
+        const SUPABASE_URL = 'https://yucrjvavbdgrkshmryoa.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1Y3JqdmF2YmRncmtzaG1yeW9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4MzU5MTUsImV4cCI6MjA1OTQxMTkxNX0.E1-kfJ_C-2eahcx6qdhO0d_1y8lCCbI2yq9Hu3EPk3o';
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const authButtons = document.querySelector('.auth-buttons');
+            
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            authButtons.style.display = authButtons.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Register form handling with Supabase
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const bloodType = document.getElementById('bloodType').value;
+            const termsAccepted = document.getElementById('terms').checked;
+            
+            if (password !== confirmPassword) {
+                alert('Kata sandi tidak cocok!');
+                return;
+            }
+            
+            if (!termsAccepted) {
+                alert('Anda harus menyetujui Syarat & Ketentuan dan Kebijakan Privasi.');
+                return;
+            }
+            
+            try {
+                // Step 1: Sign up the user with Supabase Auth
+                const { data: authData, error: authError } = await supabase.auth.signUp({
+                    email: email,
+                    password: password,
+                    options: {
+                        data: {
+                            first_name: firstName,
+                            last_name: lastName
+                        }
+                    }
+                });
+                
+                if (authError) {
+                    throw authError;
+                }
+                
+                // Step 2: Store additional user profile info in a custom table
+                if (authData.user) {
+                    const { error: profileError } = await supabase
+                        .from('donor_profiles')
+                        .insert([
+                            {
+                                user_id: authData.user.id,
+                                first_name: firstName,
+                                last_name: lastName,
+                                phone: phone,
+                                blood_type: bloodType,
+                                terms_accepted: termsAccepted
+                            }
+                        ]);
+                    
+                    if (profileError) {
+                        throw profileError;
+                    }
+                    
+                    // Registration successful
+                    alert('Pendaftaran berhasil! Silakan verifikasi email Anda dan kemudian login.');
+                    window.location.href = 'login.html';
+                }
+                
+            } catch (error) {
+                alert('Pendaftaran gagal: ' + error.message);
+                console.error('Error registering:', error);
+            }
+        });
+    </script>
+</body>
+</html>
